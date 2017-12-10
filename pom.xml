@@ -12,6 +12,7 @@
         <module>my-hello-dao</module>
         <module>my-hello-facade</module>
         <module>my-hello-common</module>
+        <module>my-hello-util</module>
     </modules>
 
 
