@@ -1,4 +1,4 @@
-package cn.wmmm.hello.util.id;
+package cn.myyy.hello.util.id;
 
 import java.text.DecimalFormat;
 import java.util.Random;
