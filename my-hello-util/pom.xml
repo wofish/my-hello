@@ -11,5 +11,11 @@
 
     <artifactId>my-hello-util</artifactId>
 
-
+    <dependencies>
+        <!-- JSON配置 -->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+        </dependency>
+    </dependencies>
 </project>
