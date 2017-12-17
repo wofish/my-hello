@@ -17,4 +17,4 @@ rebel.xml
 *.log
 *.iml
 *.jar
-/my-hello-commmon/target
+/my-hello/my-hello-commmon/target
