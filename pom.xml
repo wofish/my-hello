@@ -13,6 +13,7 @@
         <module>my-hello-facade</module>
         <module>my-hello-common</module>
         <module>my-hello-util</module>
+        <module>my-hello-core</module>
     </modules>
 
     <parent>
@@ -41,6 +42,12 @@
         <dependency>
             <groupId>cn.myyy</groupId>
             <artifactId>my-hello-util</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+
+        <dependency>
+            <groupId>cn.myyy</groupId>
+            <artifactId>my-user-facade</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
     </dependencies>
