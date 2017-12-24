@@ -1,4 +1,4 @@
-package cn.myyy.hello.common.dao.dao.standard;
+package cn.myyy.hello.common.standard;
 
 import org.apache.ibatis.annotations.Param;
 
