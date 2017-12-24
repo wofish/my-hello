@@ -4,7 +4,9 @@ public enum GlobalResponseEnum implements Message {
     SUCC("1000", "成功!"),
     FAIL("1001", "失败!"),
     ERROR_PARAM("1002", "传入参数校验失败"),
-    ILLEGAL_REQUEST("1003", "非法请求");
+    ILLEGAL_REQUEST("1003", "非法请求"),
+    NO_RESULT("1003", "没有结果")
+    ;
 
     private String respCode;
     private String respMsg;

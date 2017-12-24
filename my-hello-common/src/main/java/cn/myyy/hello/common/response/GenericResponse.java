@@ -47,6 +47,7 @@ public class GenericResponse<T> implements Serializable {
     public static final GenericResponse FAIL = new GenericResponse(GlobalResponseEnum.FAIL);
     public static final GenericResponse ERROR_PARAM = new GenericResponse(GlobalResponseEnum.ERROR_PARAM);
     public static final GenericResponse ILLEGAL_REQUEST = new GenericResponse(GlobalResponseEnum.ILLEGAL_REQUEST);
+    public static final GenericResponse NO_RESULT = new GenericResponse(GlobalResponseEnum.NO_RESULT);
 
     /**
      * 响应码
@@ -136,6 +137,7 @@ public class GenericResponse<T> implements Serializable {
      *                                  {@link GenericResponse#FAIL}
      *                                  {@link GenericResponse#ERROR_PARAM}
      *                                  {@link GenericResponse#ILLEGAL_REQUEST}
+     *                                  {@link GenericResponse#NO_RESULT}
      *                                  的respMsg的值时，抛出该异常
      */
     public GenericResponse<T> setRespMsg(String respMsg) {
@@ -159,6 +161,7 @@ public class GenericResponse<T> implements Serializable {
      *                                  {@link GenericResponse#FAIL}
      *                                  {@link GenericResponse#ERROR_PARAM}
      *                                  {@link GenericResponse#ILLEGAL_REQUEST}
+     *                                  {@link GenericResponse#NO_RESULT}
      *                                  的respMsg的值时，抛出该异常
      */
     public GenericResponse<T> appendRespMsg(Object... args) {
@@ -212,6 +215,6 @@ public class GenericResponse<T> implements Serializable {
      * @return
      */
     protected boolean isGlobalResponse() {
-        return this == SUCCESS || this == FAIL || this == ERROR_PARAM || this == ILLEGAL_REQUEST;
+        return this == SUCCESS || this == FAIL || this == ERROR_PARAM || this == ILLEGAL_REQUEST || this == NO_RESULT;
     }
 }
