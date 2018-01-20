@@ -68,6 +68,8 @@ public class DESEncryptionUtil {
 			e.printStackTrace();
 		} catch (BadPaddingException e) {
 			e.printStackTrace();
+		} catch (Exception e){
+			e.printStackTrace();
 		}
 		return null;
 	}
@@ -103,6 +105,8 @@ public class DESEncryptionUtil {
 		} catch (IllegalBlockSizeException e) {
 			e.printStackTrace();
 		} catch (BadPaddingException e) {
+			e.printStackTrace();
+		} catch (Exception e){
 			e.printStackTrace();
 		}
 		return null;
