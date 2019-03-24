@@ -20,6 +20,13 @@ public class DateUtil {
     public static final String TIME_END = " 23:59:59";
     public static final String TIME_BEGIN = " 00:00:00";
     public static final String MONTH_PATTERN = "MMddHHmmss";
+    private static final String DEFAULT_TIME_STRING = "1000-01-01 00:00:00";
+    private static Date DEFAULT_TIME = null;
+    static {
+        DEFAULT_TIME =  parse(DEFAULT_TIME_STRING, BELONG_TIME_PATTERN);
+    }
+
+
 
     /**
      * 格式化时间
@@ -34,6 +41,14 @@ public class DateUtil {
         }
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
         return simpleDateFormat.format(date);
+    }
+
+    /**
+     * 获取默认时间
+     * @return
+     */
+    public static Date defaultTime(){
+        return DEFAULT_TIME;
     }
 
     /**
@@ -238,14 +253,6 @@ public class DateUtil {
         return cal.getTime();
     }
 
-    public static void main(String[] args) {
-        Date dateA = parse("2017-1-31", BELONG_DATE_PATTERN);
-        Date dateB = parse("2017-4-30", BELONG_DATE_PATTERN);
-        System.out.println("======out=====");
-        System.out.println(isSameDateInPlan(dateA, dateB));
-
-    }
-
     /**
      * 返回两个时间间隔的月数
      *
@@ -351,5 +358,14 @@ public class DateUtil {
         }
         return (cal1.get(Calendar.YEAR) == cal2.get(Calendar.YEAR))
                 && (cal1.get(Calendar.MONTH) == cal2.get(Calendar.MONTH));
+    }
+
+    public static void main(String[] args) {
+        Date dateA = parse("2017-1-31", BELONG_DATE_PATTERN);
+        Date dateB = parse("2017-4-30", BELONG_DATE_PATTERN);
+        Date dateC = parse(DEFAULT_TIME_STRING, BELONG_TIME_PATTERN);
+        System.out.println("======out=====");
+        System.out.println(isSameDateInPlan(dateA, dateB));
+
     }
 }
