@@ -36,13 +36,13 @@ public class JedisContainer {
         this.dbIndex = dbIndex;
     }
 
-    private Jedis getJedis() throws JedisException {
+    public Jedis getJedis() throws JedisException {
         Jedis jedis = jedisPool.getResource();
         jedis.select(dbIndex);
         return jedis;
     }
 
-    private void release(Jedis jedis) {
+    public void release(Jedis jedis) {
         if (jedis != null) {
             jedis.close();
         }
