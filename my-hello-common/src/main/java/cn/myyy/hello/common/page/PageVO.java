@@ -38,4 +38,26 @@ public class PageVO<T> implements Serializable{
     public void setTotal(Long total) {
         this.total = total;
     }
+
+    /**
+     * 如果结果集只有一个那么返回，其余则返回null
+     * @return
+     */
+    public T getExpectOne(){
+        if(getRows() == null || getRows().size() != 1){
+            return null;
+        }
+        return getRows().get(0);
+    }
+
+    /**
+     * 获取第一个
+     * @return
+     */
+    public T getOne(){
+        if(getRows() == null || getRows().size() == 0){
+            return null;
+        }
+        return getRows().get(0);
+    }
 }
