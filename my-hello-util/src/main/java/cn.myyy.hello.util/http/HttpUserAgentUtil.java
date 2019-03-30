@@ -80,6 +80,7 @@ public class HttpUserAgentUtil {
         clientPlatform.setWechatClient(isWechat);
         clientPlatform.setIpNet(ipNet);
         clientPlatform.setPageUri(httpServletRequest.getRequestURI());
+        clientPlatform.setUserAgent(userAgent);
         return clientPlatform;
     }
 

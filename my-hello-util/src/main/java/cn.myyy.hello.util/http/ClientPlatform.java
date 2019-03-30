@@ -90,6 +90,11 @@ public class ClientPlatform implements Serializable {
      */
     private String pageUri;
 
+    /**
+     * 浏览器西悉尼
+     */
+    private String userAgent;
+
     public ClientPlatform() {
     }
 
@@ -284,5 +289,13 @@ public class ClientPlatform implements Serializable {
 
     public void setPageUri(String pageUri) {
         this.pageUri = pageUri;
+    }
+
+    public String getUserAgent() {
+        return userAgent;
+    }
+
+    public void setUserAgent(String userAgent) {
+        this.userAgent = userAgent;
     }
 }
