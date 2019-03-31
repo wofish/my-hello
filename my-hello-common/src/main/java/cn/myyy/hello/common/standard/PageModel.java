@@ -14,10 +14,10 @@ public class PageModel<S> {
         this.setPage(1);
         this.setRows(10);
     }
-    public static <S> PageModel defaultSearch(S s){
-        PageModel<S> pageModel = new PageModel<>();
-        pageModel.setSearch(s);
-        return pageModel;
+
+    public PageModel(S s) {
+        this();
+        this.setSearch(s);
     }
 
     public Integer getTotal() {
