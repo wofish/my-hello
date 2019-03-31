@@ -4,10 +4,29 @@ public class PageModel<S> {
 
     private Integer page;
     private Integer rows;
+    private Integer total;
     private String[] sort;
     private String[] order;
     private S search;
     private SortMap[] sortMaps;
+
+    public PageModel() {
+        this.setPage(1);
+        this.setRows(10);
+    }
+    public static <S> PageModel defaultSearch(S s){
+        PageModel<S> pageModel = new PageModel<>();
+        pageModel.setSearch(s);
+        return pageModel;
+    }
+
+    public Integer getTotal() {
+        return total;
+    }
+
+    public void setTotal(Integer total) {
+        this.total = total;
+    }
 
     public Integer getPage() {
         return page;
