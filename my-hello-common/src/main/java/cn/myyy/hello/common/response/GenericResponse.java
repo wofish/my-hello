@@ -67,7 +67,7 @@ public class GenericResponse<T> implements Serializable {
      * 默认无参构造器。
      * 子类可重写该构造器。但不允许使用者直接使用。
      */
-    protected GenericResponse() {
+    public GenericResponse() {
 
     }
 
@@ -109,6 +109,7 @@ public class GenericResponse<T> implements Serializable {
      * @param body
      */
     protected GenericResponse(String respCode, String respMsg, T body) {
+        this();
         this.respCode = respCode;
         this.respMsg = respMsg;
         this.body = body;
@@ -118,7 +119,7 @@ public class GenericResponse<T> implements Serializable {
         return respCode;
     }
 
-    protected GenericResponse<T> setRespCode(String respCode) {
+    public GenericResponse<T> setRespCode(String respCode) {
         this.respCode = respCode;
         return this;
     }
@@ -195,7 +196,7 @@ public class GenericResponse<T> implements Serializable {
      * @param body
      * @return 返回一个当前的实例对象
      */
-    protected GenericResponse<T> setBody(T body) {
+    public GenericResponse<T> setBody(T body) {
         this.body = body;
         return this;
     }
@@ -214,7 +215,7 @@ public class GenericResponse<T> implements Serializable {
      * 子类可根据需求重写此方法.
      * @return
      */
-    protected boolean isGlobalResponse() {
+    public boolean isGlobalResponse() {
         return this == SUCCESS || this == FAIL || this == ERROR_PARAM || this == ILLEGAL_REQUEST || this == NO_RESULT;
     }
 }
