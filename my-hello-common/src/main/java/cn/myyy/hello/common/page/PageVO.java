@@ -8,7 +8,7 @@ import java.util.List;
  * @date: 2018/01/29
  * @author: SUNYAFEI
  */
-public class PageVO<T extends Serializable> implements Serializable{
+public class PageVO<T> implements Serializable{
     private static final long serialVersionUID = 1569490394750160594L;
     private List<T> listObj;
 
@@ -16,11 +16,6 @@ public class PageVO<T extends Serializable> implements Serializable{
 
     public PageVO() {
 
-    }
-
-    public PageVO(List<T> listObj, Long total) {
-        this.listObj = listObj;
-        this.total = total;
     }
 
     public List<T> getListObj() {
@@ -38,26 +33,10 @@ public class PageVO<T extends Serializable> implements Serializable{
     public void setTotal(Long total) {
         this.total = total;
     }
-
-    /**
-     * 如果结果集只有一个那么返回，其余则返回null
-     * @return
-     */
-    public T getExpectOne(){
-        if(getListObj() == null || getListObj().size() != 1){
-            return null;
-        }
-        return getListObj().get(0);
+    public T popExpectOne(){
+        return getListObj() != null && getListObj().size() == 1 ? getListObj().get(0) : null;
     }
-
-    /**
-     * 获取第一个
-     * @return
-     */
-    public T getOne(){
-        if(getListObj() == null || getListObj().size() == 0){
-            return null;
-        }
-        return getListObj().get(0);
+    public T popOne(){
+        return getListObj() != null ? getListObj().get(0) : null;
     }
 }
