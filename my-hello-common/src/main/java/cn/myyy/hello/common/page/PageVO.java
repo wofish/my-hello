@@ -8,9 +8,9 @@ import java.util.List;
  * @date: 2018/01/29
  * @author: SUNYAFEI
  */
-public class PageVO<T> implements Serializable{
+public class PageVO<T extends Serializable> implements Serializable{
     private static final long serialVersionUID = 1569490394750160594L;
-    private List<T> rows;
+    private List<T> listObj;
 
     private Long total;
 
@@ -18,17 +18,17 @@ public class PageVO<T> implements Serializable{
 
     }
 
-    public PageVO(List<T> rows, Long total) {
-        this.rows = rows;
+    public PageVO(List<T> listObj, Long total) {
+        this.listObj = listObj;
         this.total = total;
     }
 
-    public List<T> getRows() {
-        return rows;
+    public List<T> getListObj() {
+        return listObj;
     }
 
-    public void setRows(List<T> rows) {
-        this.rows = rows;
+    public void setListObj(List<T> listObj) {
+        this.listObj = listObj;
     }
 
     public Long getTotal() {
@@ -44,10 +44,10 @@ public class PageVO<T> implements Serializable{
      * @return
      */
     public T getExpectOne(){
-        if(getRows() == null || getRows().size() != 1){
+        if(getListObj() == null || getListObj().size() != 1){
             return null;
         }
-        return getRows().get(0);
+        return getListObj().get(0);
     }
 
     /**
@@ -55,9 +55,9 @@ public class PageVO<T> implements Serializable{
      * @return
      */
     public T getOne(){
-        if(getRows() == null || getRows().size() == 0){
+        if(getListObj() == null || getListObj().size() == 0){
             return null;
         }
-        return getRows().get(0);
+        return getListObj().get(0);
     }
 }
